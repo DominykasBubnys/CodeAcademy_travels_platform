@@ -15,3 +15,5 @@ use App\Http\Controllers\PlaceController;
 */
 
 Route::get('/', [PlaceController::class, "getPlaces"]);
+Route::get('/place/{id}', [PlaceController::class, "getPlaceById"]);
+
