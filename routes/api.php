@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ Route::prefix('places')->group(function(){
     Route::post('/new', [PlaceController::class, "addNewPlace"]);
 
 });
+
+Route::post('login', [AuthController::class, 'auth'])->name('auth');
+
 // Route::post('/new', [PlaceController::class, "addNewPlace"]);
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlaceController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,8 @@ Route::prefix('places')->group(function(){
 
 });
 
-Route::get('profile', [ProfileController::class, 'show'])->middleware('request_logger');
+Route::get('profile', [ProfileController::class, 'show'])->middleware(['request_logger', 'ip_restriction']);
+
 
 
 
