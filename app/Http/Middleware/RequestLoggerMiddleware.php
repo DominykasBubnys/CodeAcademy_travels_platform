@@ -16,9 +16,14 @@ class RequestLoggerMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        var_dump($request->all());
-
+        file_put_contents(storage_path() . '/request.log', $request->all(), FILE_APPEND);
         
-        return $next($request);
+        $response = $next($request);
+
+
+        file_put_contents(storage_path() . '/response.log', $response, FILE_APPEND);
+
+
+        return $response;
     }
 }

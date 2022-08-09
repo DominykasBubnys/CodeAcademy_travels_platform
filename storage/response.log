@@ -1,0 +1,13 @@
+HTTP/1.1 200 OK
+Cache-Control: no-cache, private
+Content-Type:  text/html; charset=UTF-8
+Date:          Tue, 09 Aug 2022 06:23:22 GMT
+
+repsponseHTTP/1.1 200 OK
+Cache-Control: no-cache, private
+Content-Type:  text/html; charset=UTF-8
+Date:          Tue, 09 Aug 2022 06:23:22 GMT
+Set-Cookie:    XSRF-TOKEN=eyJpdiI6InYyejQzcWxDaG5GNWJEaEJXdi81OFE9PSIsInZhbHVlIjoiamt3RVZsejhJeWlpRzl6em84Q2h1NzloNFV3MC9jWUprcnpDUXE3WXV5RWVFaGxHQytQS0lDU1FkUnZHT290TjM3S2RSdHZsQXcyczRhV0QvMEpBdkZoZDEwY2dHMytzNEs1RmJiRXFXdHNwZ1Fab05XTGRUelFqUXhVSUxTUHciLCJtYWMiOiI0YWFlZjhkODY1MjRhMWVlZTgwOWM5NThiYzM2ZGMzMmVmZmIyNGE5MmU5ZGM1MTcwZGUzYTQ2NzNjY2Y4ZDlmIiwidGFnIjoiIn0%3D; expires=Tue, 09 Aug 2022 08:23:22 GMT; Max-Age=7200; path=/; samesite=lax
+Set-Cookie:    laravel_session=eyJpdiI6ImFORW1XbVBldWxWV1h6TkxENVZjT1E9PSIsInZhbHVlIjoiZktraXpzRWZ3NWJsTVpCaE1ZQW5hSTFuQ1BEYUh0RVhWZEw3Y1NFQVNTZm1nS0hlczliamN4YjVrK3VDZ1VsQisyRUNWaUhJa1JuWkFqUkdGOGpPMEpYRTVyRFMvaFJjNjZ0NEp2ekExQ3d5TW1HditpM2hndkpVTjFBNnp0eUQiLCJtYWMiOiJkNGFmYzg0N2FhZDc2N2M3MjhlNzQwNTRjZjc3MDQ1ZDA4NjlmNzdmYzNkZjM2ODQ5ZDIxYjQxNTIyMGNiNjk2IiwidGFnIjoiIn0%3D; expires=Tue, 09 Aug 2022 08:23:22 GMT; Max-Age=7200; path=/; httponly; samesite=lax
+
+repsponse
