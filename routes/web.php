@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlaceController;
+use Illuminate\Http\Request;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +20,14 @@ use App\Http\Controllers\PlaceController;
 
 Route::prefix('places')->group(function(){
 
-    Route::get('/', [PlaceController::class, "getPlaces"]);
-    Route::get('/place/{id}', [PlaceController::class, "getPlaceById"]);
     
+    // Route::post('/new', [PlaceController::class, "addNewPlace"]);
+    Route::get('/', [PlaceController::class, "getPlaces"]);
+    Route::get('/{id}', [PlaceController::class, "getPlaceById"]);
+
 });
+
+Route::get('profile', [ProfileController::class, 'show'])->middleware('request_logger');
+
+
 
