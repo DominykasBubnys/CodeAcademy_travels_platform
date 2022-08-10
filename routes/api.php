@@ -23,10 +23,9 @@ Route::prefix('places')->group(function(){
 
 });
 
-Route::post('login', [AuthController::class, 'auth'])->name('auth');
+Route::prefix('auth')->group(function(){
+    Route::post('/login', [AuthController::class, "auth_login"])->name('auth_login');
+    Route::post('/signup', [AuthController::class, 'auth_signup'])->name('auth_signup');
+});
 
-// Route::post('/new', [PlaceController::class, "addNewPlace"]);
 
-// Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
