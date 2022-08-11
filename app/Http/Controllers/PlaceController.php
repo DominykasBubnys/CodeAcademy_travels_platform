@@ -14,28 +14,14 @@ class PlaceController extends Controller
     // adds new place to database
     public function AddNewPlace(Request $request){
 
-        // try {
-        //     $title = "request->input('title')";
-        //     $description = "request->input('description')";
-        //     $image = "request->input('image')";
-        //     $address = "request->input('address')";
-        //     $likes = "request->input('likes')";
-        //     $user_id = 1;
-
-            Place::create([
-                'title' => "title", 
-                'description' => "description", 
-                'image' => "image", 
-                'adress' => "address", 
-                'likes' => 1, 
-                'user_id' => "Aryanna Hand - 1"
-            ]);
-
-
-        // } catch (Exception $err) {
-        //     Log::$err;
-        // }
-
+        Place::create([
+            'title' => "title", 
+            'description' => "description", 
+            'image' => "image", 
+            'adress' => "address", 
+            'likes' => 1, 
+            'user_id' => "Aryanna Hand - 1"
+        ]);
 
         return response()->json([
             'status' => 200,

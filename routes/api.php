@@ -2,7 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PlaceController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -16,18 +16,9 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::prefix('places')->group(function(){
-
-    Route::post('/new', [PlaceController::class, "addNewPlace"]);
-
+Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+    return $request->user();
 });
 
-// Route::prefix('auth')->group(function(){
-//     Route::post('/signup', [AuthController::class, 'auth_signup'])->name('auth_signup');
-// });
 
-Route::post('/login', [AuthController::class, "login"])->name('auth_login');
-
-
-
-
+Route::post('login', [AuthController::class, 'login'])->name('login');

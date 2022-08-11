@@ -28,8 +28,7 @@ Route::prefix('places')->group(function(){
 
 });
 
-Route::get('profile', [ProfileController::class, 'show'])->name('profile')->middleware('auth.basic');
-
+Route::get('profile', [ProfileController::class, 'show'])->name('profile');
 
 
 
