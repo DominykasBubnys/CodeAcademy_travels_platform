@@ -18,14 +18,16 @@ use App\Http\Controllers\AuthController;
 
 Route::prefix('places')->group(function(){
 
-    
     Route::post('/new', [PlaceController::class, "addNewPlace"]);
 
 });
 
-Route::prefix('auth')->group(function(){
-    Route::post('/login', [AuthController::class, "auth_login"])->name('auth_login');
-    Route::post('/signup', [AuthController::class, 'auth_signup'])->name('auth_signup');
-});
+// Route::prefix('auth')->group(function(){
+//     Route::post('/signup', [AuthController::class, 'auth_signup'])->name('auth_signup');
+// });
+
+Route::post('/login', [AuthController::class, "login"])->name('auth_login');
+
+
 
 

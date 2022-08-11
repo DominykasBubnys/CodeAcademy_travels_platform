@@ -28,7 +28,7 @@ Route::prefix('places')->group(function(){
 
 });
 
-Route::get('profile', [ProfileController::class, 'show'])->middleware(['request_logger', 'ip_restriction']);
+Route::get('profile', [ProfileController::class, 'show'])->name('profile')->middleware('auth.basic');
 
 
 
