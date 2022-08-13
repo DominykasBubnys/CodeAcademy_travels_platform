@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Place;
-use PhpParser\Node\Stmt\TryCatch;
 use TheSeer\Tokenizer\Exception;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
 
@@ -89,13 +87,22 @@ class PlaceController extends Controller
         ]);
     }
 
-    // returns place by setted id
+    // returns place by given id
     public function getPlaceById($id){
         $place = Place::find($id);
 
 
         return response()->json([
             "place"=>$place
+        ]);
+    }
+
+    public function getPlacesByUserId($uid){
+
+        $places = Place::where("author_id", $uid)->get();
+
+        return response()->json([
+            'places'=>$places
         ]);
     }
 }

@@ -24,6 +24,7 @@ Route::prefix('places')->group(function(){
     
     // Route::post('/new', [PlaceController::class, "addNewPlace"]);
     Route::get('/', [PlaceController::class, "getPlaces"]);
+    Route::get('/user/{uid}', [PlaceController::class, "getPlacesByUserId"]);
     Route::get('/{id}', [PlaceController::class, "getPlaceById"]);
 
 });
