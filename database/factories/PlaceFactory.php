@@ -22,7 +22,7 @@ class PlaceFactory extends Factory
             'image'=>$this->faker->url(),
             'address'=>$this->faker->address(),
             'likes'=>$this->faker->numberBetween(0,20),
-            // 'user_id'=>$this->faker->text()
+            'author_id'=>$this->faker->text()
         ];
     }
 }

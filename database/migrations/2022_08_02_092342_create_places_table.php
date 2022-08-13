@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('image', 250);
             $table->string('address', 250);
             $table->integer("likes");
-            $table->foreignId('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreignId('author_id')->nullable();
+            $table->foreign('author_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

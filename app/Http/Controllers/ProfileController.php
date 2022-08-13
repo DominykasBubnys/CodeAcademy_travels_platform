@@ -11,7 +11,7 @@ class ProfileController extends Controller
 
 
       return response()->json([
-        'show profile controller'=>'opacki'
+        'show profile controller'
       ]);
     }
 }
