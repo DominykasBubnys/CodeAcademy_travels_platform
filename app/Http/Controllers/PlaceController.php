@@ -72,6 +72,38 @@ class PlaceController extends Controller
 
     }
 
+    public function UpdatePlace(Request $request){
+        $updatedTitle = $request->get("updatedTitle");
+        $updatedDescription = $request->get("updatedDescription");
+        $updatedPlaceId = $request->get("pid");
+        
+        
+        try {
+
+            Place::where('id', $updatedPlaceId)->update([
+                'title' => $updatedTitle,
+                'description' => $updatedDescription
+            ]);
+
+            return response()->json([
+                'status' => true,
+                'message' => 'Place was updated successfuly',
+                'place id' => $updatedPlaceId,
+                'new title' => $updatedTitle,
+                'new description' => $updatedDescription,
+            ]);
+
+        } catch (Exception $err) {
+            return response()->json([
+                'status' => false,
+                'message' => 'Failed to update place',
+                'new title' => $updatedTitle,
+                'new description' => $updatedDescription,
+            ]);
+        }
+
+    }
+
     public function doesUserExist($uid){
         return User::where('id', $uid)->first();
     }
