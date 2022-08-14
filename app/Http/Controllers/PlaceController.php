@@ -104,6 +104,26 @@ class PlaceController extends Controller
 
     }
 
+    public function DeletePlace($pid){
+        $place = Place::where("id", $pid)->first();
+
+        if(! $place)return response()->json([
+            'status'=>false,
+            'message'=>'Cannot found place with given id!',
+            'place'=>null,
+            'place_id'=>$pid
+        ]);
+
+        $place->delete();
+
+        return response()->json([
+            'status'=>true,
+            'message'=>'Place was deleted successfuly!',
+            'place'=>$place,
+            'place_id'=>$pid
+        ]);
+    }
+
     public function doesUserExist($uid){
         return User::where('id', $uid)->first();
     }

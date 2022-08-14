@@ -26,4 +26,4 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 
 Route::post('places/new', [PlaceController::class, 'AddNewPlace'])->name('AddNewPlace');
 Route::post('places/update/{pid}', [PlaceController::class, 'UpdatePlace'])->name('UpdatePlace');
-Route::post('places/delete/{pid}', [PlaceController::class, 'DeletePlace'])->name('DeletePlace');
+Route::get('places/delete/{pid}', [PlaceController::class, 'DeletePlace'])->name('DeletePlace');
