@@ -29,7 +29,7 @@ Route::prefix('places')->group(function(){
 
 });
 
-Route::get('profile', [ProfileController::class, 'show'])->name('profile');
+Route::get('profile', [ProfileController::class, 'getDetails'])->name('profile');
 
 
 

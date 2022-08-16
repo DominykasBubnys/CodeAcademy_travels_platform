@@ -7,11 +7,11 @@ class ProfileController extends Controller
 {
     //
 
-    public function show(){
+    public function getDetails($uid){
 
 
       return response()->json([
-        'show profile controller'
+        'show profile controller: ' => $uid
       ]);
     }
 }
