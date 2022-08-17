@@ -18,7 +18,7 @@ class AuthController extends Controller
         'email' => ['email', 'required', 'unique:users,email'],
         'password' => ['required'],
         'country'=>['string'],
-        'image'=>['string']
+        'image'=>['string', 'url']
       ]
     );
     
@@ -40,14 +40,17 @@ class AuthController extends Controller
       'image'=>$request->get('image')
     ]);
 
+    
+
     $token = $user->createToken('FundaProjectToken')->plainTextToken;
 
     return response()->json([
       'user'=>$user,
       'token'=>$token,
       'status'=>true,
-      'message'=>"User was sign up successfuly"
+      'message'=>"Users registration went successfuly"
     ]);
+
     
   }
 
