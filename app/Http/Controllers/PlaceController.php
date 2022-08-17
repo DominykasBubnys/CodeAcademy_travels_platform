@@ -157,4 +157,5 @@ class PlaceController extends Controller
             'places'=>$places
         ]);
     }
+    
 }

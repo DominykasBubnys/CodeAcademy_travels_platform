@@ -27,6 +27,7 @@ Route::prefix('places')->group(function(){
     Route::get('/', [PlaceController::class, "getPlaces"]);
     Route::get('/user/{uid}', [PlaceController::class, "getPlacesByUserId"]);
     Route::post('/new-comment', [CommentController::class, 'store'])->name('store');
+    Route::get('/get-comments/{pid}', [PlaceController::class, 'getPlaceComments'])->name('getPlaceComments');
     Route::post('/new', [PlaceController::class, 'AddNewPlace'])->name('AddNewPlace');
     Route::post('/update/{pid}', [PlaceController::class, 'UpdatePlace'])->name('UpdatePlace');
     Route::get('/delete/{pid}', [PlaceController::class, 'DeletePlace'])->name('DeletePlace');
