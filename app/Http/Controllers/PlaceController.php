@@ -7,6 +7,8 @@ use App\Models\Place;
 use TheSeer\Tokenizer\Exception;
 use Illuminate\Support\Facades\Validator;
 use App\Models\User;
+use App\Models\Comment;
+
 
 class PlaceController extends Controller
 {
@@ -158,4 +160,31 @@ class PlaceController extends Controller
         ]);
     }
     
+
+    public function getPlaceComments($pid){
+
+        if(!$pid)return response()->json(['status'=>false, 'message'=>'please provide a valid place id']);
+
+        $place = Place::where('id',$pid)->first();
+
+        if(!$place){
+            return response()->json([
+                'status'=>false,
+                'message'=>'Cannot found place with given id',
+                'place_id'=>$pid
+            ]);
+        }
+
+        $comments = Comment::where("commentable_id", $pid)->get();
+        $count = Comment::where("commentable_id", $pid)->count();
+
+
+        return response()->json([
+            'status'=>true,
+            'message'=>'found comments',
+            'comments'=>$comments,
+            'count'=>$count
+        ]);
+
+    }
 }
