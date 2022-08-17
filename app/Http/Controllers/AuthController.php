@@ -105,9 +105,13 @@ class AuthController extends Controller
   public function fetchUserById($uid){
 
     $user = User::where('id',$uid)->first();
+    $status = true;
+
+    if(!$user)$status=false;
 
     return response()->json([
-      'user'=> $user
+      'user'=> $user,
+      'status'=>$status
     ]);
   }
 

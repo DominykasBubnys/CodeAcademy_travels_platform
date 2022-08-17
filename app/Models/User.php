@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Comment;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -29,6 +29,11 @@ class User extends Authenticatable
     public function places()
     {
         return $this->hasMany(Place::class, 'author_id');
+    }
+
+    public function comments()
+    {
+        return $this->morphMany(Comment::class, 'commentable')->whereNull('parent_id');
     }
 
     /**
