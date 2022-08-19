@@ -109,12 +109,17 @@ class AuthController extends Controller
 
     $user = User::where('id',$uid)->first();
     $status = true;
-
-    if(!$user)$status=false;
+    $message = "User fetched successfuly"; 
+    
+    if(!$user){
+      $status=false;
+      $comment="Cannot get user with provided id";
+    };
 
     return response()->json([
       'user'=> $user,
-      'status'=>$status
+      'status'=>$status,
+      'message'=>$message
     ]);
   }
 
