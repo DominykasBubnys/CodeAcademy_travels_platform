@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use Illuminate\Support\Carbon;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
@@ -113,7 +112,7 @@ class AuthController extends Controller
     
     if(!$user){
       $status=false;
-      $comment="Cannot get user with provided id";
+      $message="Cannot get user with provided id";
     };
 
     return response()->json([

@@ -34,7 +34,7 @@ class ScrapHotels extends Controller
         // var_dump($hotels_number);
 
         return response()->json([
-            'scrapas: '=> $place->comments
+            'scrap data: '=> $place->comments
         ]);
     }
 }

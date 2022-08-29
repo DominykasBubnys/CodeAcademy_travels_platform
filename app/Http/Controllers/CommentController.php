@@ -14,6 +14,7 @@ class CommentController extends Controller
         $validator = Validator::make($request->all(), 
             [
                 'body'=>['required'],
+                'auth_image' => ['required'],
                 'place_id'=>['required'],
                 'user_id'=>['required']
             ],

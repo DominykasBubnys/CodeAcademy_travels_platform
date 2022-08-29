@@ -20,7 +20,7 @@ class PlaceController extends Controller
             [
                 'title' => ['string', 'required'],
                 'description' => ['required'],
-                'image' => ['required'],
+                'image' => ['url', 'required'],
                 'address' => ['string', 'required'],
                 'author_id' => ['required'],
             ],

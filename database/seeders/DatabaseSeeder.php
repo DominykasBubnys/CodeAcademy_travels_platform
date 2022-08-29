@@ -39,8 +39,8 @@ class DatabaseSeeder extends Seeder
 
         $user = new User();
         $user->email='test@test2.com';
-        $user->name="Thomas";
-        $user->password=Hash::make('hello2');
+        $user->name="Tomas";
+        $user->password=Hash::make('hello');
         $user->country="Amerika";
         $user->image='https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSXanJlp8fSM6vn8JGF8Oym7VnL3GkBA8Xu2QN3TYD3dDzhE8Nc';
         $user->save();
