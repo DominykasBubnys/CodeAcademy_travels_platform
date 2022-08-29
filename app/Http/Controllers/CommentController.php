@@ -24,6 +24,7 @@ class CommentController extends Controller
             return response()->json([
                 'status'=>false,
                 'message'=> $validator->getMessageBag()->all(),
+                'inputs'=>$request->all()
             ]);
         }
 
@@ -33,10 +34,17 @@ class CommentController extends Controller
         $user = User::where('id',$request->get("user_id"))->first();
         if(!$user)return response()->json(['status'=>false,'message'=>'Cannot found User with provided id']);
 
+        if(!$place || !$user){
+            return response()->json([
+                'status'=>false,
+                'message'=>'Failed to load commenting user or place by id',
+            ]);
+        }
 
 
         $comment = new Comment();
         $comment->body=$request->get('body');
+        $comment->auth_image=$request->get('auth_image');
         $comment->user()->associate($user);
         $place->comments()->save($comment);
         $comment->save();
