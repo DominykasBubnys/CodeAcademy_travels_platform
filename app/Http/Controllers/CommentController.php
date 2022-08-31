@@ -55,4 +55,26 @@ class CommentController extends Controller
         ]);
 
     }
+
+    public function remove(Request $request){
+        if(!$request->get('id')){
+            return response()->json([
+            'removed comment' => $comment
+            ]);
+        }
+        $comment = Comment::where('id', $request->get('id'));
+
+        if(!$comment)return response()->json([
+            'status'=>false,
+            'message'=>'cannot found comment with provided id'
+        ]);
+
+        $comment->delete();
+
+        return response()->json([
+            'removed comment' => $comment,
+            'message'=>'comment was deleted successfuly',
+            'status'=>true
+        ]);
+    }
 }
